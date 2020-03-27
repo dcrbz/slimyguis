@@ -100,15 +100,28 @@ public class CustomItem {
             }
         }
 
+        // Banners
+        if (mat.name().endsWith("_BANNER")) {
+            return BannerCustomItem.from(
+                    mat, data, amount, displayName, lores, flags, enchantments,
+                    config
+            );
+        }
+
+        // Spawn eggs
+        if (mat.name().endsWith("_SPAWN_EGG")) {
+            return SpawnEggCustomItem.from(
+                    mat, data, amount, displayName, lores, flags, enchantments,
+                    config
+            );
+        }
+
         switch (mat) {
-            case BANNER:
-                return BannerCustomItem.from(
-                        mat, data, amount, displayName, lores, flags, enchantments,
-                        config
-                );
-            case SKULL:
-                mat = Material.SKULL_ITEM;
-            case SKULL_ITEM:
+            case SKELETON_SKULL:
+            case SKELETON_WALL_SKULL:
+                mat = Material.SKELETON_SKULL;
+            case PLAYER_HEAD:
+            case PLAYER_WALL_HEAD:
                 return SkullCustomItem.from(
                         mat, data, amount, displayName, lores, flags, enchantments,
                         config
@@ -134,23 +147,13 @@ public class CustomItem {
                         mat, data, amount, displayName, lores, flags, enchantments,
                         config
                 );
-            case MONSTER_EGG:
-                return SpawnEggCustomItem.from(
-                        mat, data, amount, displayName, lores, flags, enchantments,
-                        config
-                );
             case ENCHANTED_BOOK:
                 return EnchantedBookCustomItem.from(
                         mat, data, amount, displayName, lores, flags, enchantments,
                         config
                 );
-            case FIREWORK:
+            case FIREWORK_ROCKET:
                 return FireworkCustomItem.from(
-                        mat, data, amount, displayName, lores, flags, enchantments,
-                        config
-                );
-            case FIREWORK_CHARGE:
-                return FireworkChargeCustomItem.from(
                         mat, data, amount, displayName, lores, flags, enchantments,
                         config
                 );

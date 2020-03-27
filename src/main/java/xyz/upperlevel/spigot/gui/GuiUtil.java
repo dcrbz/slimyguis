@@ -18,13 +18,37 @@ import static org.bukkit.ChatColor.RED;
 
 public final class GuiUtil {
 
+    @Deprecated
     public static ItemStack wool(DyeColor color, String name, String... lores) {
         return setNameAndLores(new Wool(color).toItemStack(1), name, lores);
     }
 
-    @SuppressWarnings("deprecation")
+    @Deprecated
     public static ItemStack wood(TreeSpecies type, String name, String... lores) {
-        return setNameAndLores(new ItemStack(Material.WOOD, 1, type.getData()), name, lores);
+        Material mat = null;
+
+        switch (type) {
+            case ACACIA:
+                mat = Material.ACACIA_WOOD;
+                break;
+            case BIRCH:
+                mat = Material.BIRCH_WOOD;
+                break;
+            case DARK_OAK:
+                mat = Material.DARK_OAK_WOOD;
+                break;
+            case JUNGLE:
+                mat = Material.JUNGLE_WOOD;
+                break;
+            case REDWOOD:
+                mat = Material.SPRUCE_WOOD;
+                break;
+            case GENERIC:
+            default:
+                mat = Material.OAK_WOOD;
+        }
+
+        return setNameAndLores(new ItemStack(mat), name, lores);
     }
 
     public static ItemStack itemStack(Material display, String name, String... lores) {

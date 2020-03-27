@@ -321,9 +321,7 @@ public interface Config {
             return def;
         else {
             Material res;
-            if (raw instanceof Number)
-                res = Material.getMaterial(((Number) raw).intValue());
-            else if (raw instanceof String) {
+            if (raw instanceof String) {
                 res = Material.getMaterial(((String) raw).replace(' ', '_').toUpperCase());
             } else
                 throw new InvalidGuiConfigurationException("Invalid value in \"" + key + "\"");

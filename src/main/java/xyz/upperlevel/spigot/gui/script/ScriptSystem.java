@@ -168,4 +168,12 @@ public class ScriptSystem {
     public Map<String, Script> get() {
         return Collections.unmodifiableMap(scripts);
     }
+
+    /**
+     * Check whether the ScriptSystem is available by
+     * checking whether the JS engine is present.
+     */
+    public static boolean isAvailable() {
+        return new ScriptEngineManager().get("js") != null;
+    }
 }

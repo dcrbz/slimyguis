@@ -6,7 +6,7 @@
 
     <groupId>xyz.upperlevel.spigot.gui</groupId>
     <artifactId>slimyguis</artifactId>
-    <version>2.1.3</version>
+    <version>2.2.0</version>
 
     <name>SlimyGuis</name>
     <description>A Lib for GUI loading from files for Spigot</description>
@@ -15,7 +15,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <mcVersion>1.11.2-R0.1-SNAPSHOT</mcVersion>
+        <mcVersion>1.15-R0.1-SNAPSHOT</mcVersion>
         <mainClass>xyz.upperlevel.spigot.gui.SlimyGuis</mainClass>
     </properties>
 
@@ -32,8 +32,8 @@
         </repository>
         <!-- Vault API -->
         <repository>
-            <id>vault-repo</id>
-            <url>http://nexus.hc.to/content/repositories/pub_releases</url>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
         </repository>
         <!-- Metrics system -->
         <repository>
@@ -99,42 +99,36 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.16</version>
+            <version>1.18.12</version>
             <scope>provided</scope>
         </dependency>
         <!-- AnvilGui -->
         <dependency>
             <groupId>xyz.upperlevel.spigot.anvilgui</groupId>
             <artifactId>spigot-anvil-gui</artifactId>
-            <version>1.2.1</version>
+            <version>1.2</version>
             <scope>compile</scope>
         </dependency>
         <!-- BookApi -->
         <dependency>
             <groupId>xyz.upperlevel.spigot.book</groupId>
             <artifactId>spigot-book-api</artifactId>
-            <version>1.1</version>
+            <version>1.3</version>
             <scope>compile</scope>
         </dependency>
         <!-- Placeholder API -->
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
-            <version>2.0.8</version>
+            <version>2.10.3</version>
             <scope>provided</scope>
         </dependency>
         <!-- Vault API -->
         <dependency>
-            <groupId>net.milkbowl.vault</groupId>
+            <groupId>com.github.MilkBowl</groupId>
             <artifactId>VaultAPI</artifactId>
-            <version>1.6</version>
+            <version>1.7</version>
             <scope>provided</scope>
-        </dependency>
-        <!-- bStats -->
-        <dependency>
-            <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit</artifactId>
-            <version>1.1</version>
         </dependency>
     </dependencies>
 
@@ -185,20 +179,6 @@
                         <id>attach-javadocs</id>
                         <goals>
                             <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
                         </goals>
                     </execution>
                 </executions>
